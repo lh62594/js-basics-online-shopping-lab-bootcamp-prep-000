@@ -40,17 +40,15 @@ function total() {
 }
 
 function removeFromCart(item) {
+  var itemInCart = false
   for(let i = 0; i < cart.length; i++) {
-    var newCart = []
     if(cart[i].itemName === item) {
+      var itemInCart = true
       cart.splice(i,1)
-    } else {
-      newCart.push(cart[i].itemName)
     }
   }
-  if(newCart.length = cart.length){
-    return "That item is not in your cart."
-  } else {
+  if(itemInCart === true) {
     return cart
+  } else {
+    return "That item is not in your cart."
   }
-}
