@@ -40,9 +40,19 @@ function total() {
 }
 
 function removeFromCart(item) {
+  if(cart.length === 0) {
+    return "Your shopping cart is empty"
+  }
   for(let i = 0; i < cart.length; i++) {
+    var newCart = []
     if(cart[i].itemName === item){
       cart.splice(i,0)
-      var a = cart.splice(i,0)
       return cart
+    } else {
+      newCart.push(cart[i].itemName)
     }
+  }
+  if(newCart.length === cart.length) {
+    return "That item is not in your cart."
+  }
+}
