@@ -48,3 +48,9 @@ function removeFromCart(item) {
       newCart.push(cart[i].itemName)
     }
   }
+  if(newCart.length = cart.length){
+    return "That item is not in your cart."
+  } else {
+    return cart
+  }
+}
